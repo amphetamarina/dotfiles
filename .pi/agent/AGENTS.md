@@ -12,6 +12,14 @@
 - Use the official ASD-STE100 site as the language reference:
   https://www.asd-ste100.org/
 
+## Pi configuration source
+
+- Use `~/workspace/dotfiles/.pi/agent/` as the canonical reference for global Pi configuration.
+- Make Pi configuration changes in this folder first.
+- Treat `~/.pi/agent/` as the runtime location, not as the canonical reference.
+- Update runtime files from the canonical reference when Pi cannot load a file from another location.
+- Apply the Git rules in this file to the `~/workspace/dotfiles` repository.
+
 ## Work method
 
 - Read the applicable instructions before you start work.
