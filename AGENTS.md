@@ -22,10 +22,10 @@ Local path: `~/workspace/dotfiles`.
 | Ghostty | `~/.config/ghostty/config.ghostty` | `.config/ghostty/config.ghostty` |
 | Helix | `~/.local/bin/hx` | `.config/helix/config.toml` |
 | GNOME input | `~/.config/autostart/dotfiles-input-settings.desktop` | `.config/gnome/apply-input-settings.sh` |
-| Pi | `~/.pi/agent/AGENTS.md` | `.pi/agent/AGENTS.md` |
+| Pi | `~/.pi/agent/` loaders | `.pi/agent/` |
 
-Tmux helper scripts are in `.config/tmux/`. The Pi loader tells agents to read
-the canonical file in this repo.
+Tmux helper scripts are in `.config/tmux/`. Pi loaders point to the canonical
+agent instructions, extensions, and skills in this repo.
 
 Loaders contain only these directives:
 
