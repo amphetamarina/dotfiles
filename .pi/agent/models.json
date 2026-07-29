@@ -1,0 +1,16 @@
+{
+  "providers": {
+    "inception-labs": {
+      "baseUrl": "https://api.inceptionlabs.ai/v1",
+      "api": "openai-completions",
+      "apiKey": "$INCEPTION_LABS_API_KEY",
+      "models": [
+        {
+          "id": "mercury-2",
+          "name": "Mercury 2",
+          "contextWindow": 128000
+        }
+      ]
+    }
+  }
+}
