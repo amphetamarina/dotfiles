@@ -11,4 +11,6 @@ be committed.
 - Bash: `.bashrc`
 - tmux: `.tmux.conf` and `.config/tmux/`
 - Ghostty: `.config/ghostty/config.ghostty`
+- Helix: `.config/helix/config.toml`
+- GNOME input settings: `.config/gnome/apply-input-settings.sh`
 - Pi global agent instructions: `.pi/agent/AGENTS.md`

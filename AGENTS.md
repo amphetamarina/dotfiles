@@ -20,6 +20,8 @@ Local path: `~/workspace/dotfiles`.
 | Bash | `~/.bashrc` | `.bashrc` |
 | tmux | `~/.tmux.conf` | `.tmux.conf` |
 | Ghostty | `~/.config/ghostty/config.ghostty` | `.config/ghostty/config.ghostty` |
+| Helix | `~/.local/bin/hx` | `.config/helix/config.toml` |
+| GNOME input | `~/.config/autostart/dotfiles-input-settings.desktop` | `.config/gnome/apply-input-settings.sh` |
 | Pi | `~/.pi/agent/AGENTS.md` | `.pi/agent/AGENTS.md` |
 
 Tmux helper scripts are in `.config/tmux/`. The Pi loader tells agents to read
@@ -31,6 +33,8 @@ Loaders contain only these directives:
 ~/.bashrc: source ~/workspace/dotfiles/.bashrc
 ~/.tmux.conf: source-file ~/workspace/dotfiles/.tmux.conf
 Ghostty: config-file = "/home/amphetamarina/workspace/dotfiles/.config/ghostty/config.ghostty"
+Helix: /usr/bin/hx --config ~/workspace/dotfiles/.config/helix/config.toml
+GNOME input: run ~/workspace/dotfiles/.config/gnome/apply-input-settings.sh
 ```
 
 For a new app, store its config in this repo and use the app's native include
