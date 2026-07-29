@@ -23,6 +23,13 @@
 - Run the applicable checks after a change.
 - Do not report that a check passed unless you ran it.
 
+## RTK
+
+- Use `rtk` for supported shell commands.
+- Prefer direct `rtk` commands over compound shell commands.
+- Use a native command only when RTK has no supported equivalent.
+- Use `RTK_DISABLED=1` when you need unfiltered output from a supported command.
+
 ## Evidence
 
 - Give inspectable evidence for each factual claim.
