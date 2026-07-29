@@ -20,8 +20,10 @@ Local path: `~/workspace/dotfiles`.
 | Bash | `~/.bashrc` | `.bashrc` |
 | tmux | `~/.tmux.conf` | `.tmux.conf` |
 | Ghostty | `~/.config/ghostty/config.ghostty` | `.config/ghostty/config.ghostty` |
+| Pi | `~/.pi/agent/AGENTS.md` | `.pi/agent/AGENTS.md` |
 
-Tmux helper scripts are in `.config/tmux/`.
+Tmux helper scripts are in `.config/tmux/`. The Pi loader tells agents to read
+the canonical file in this repo.
 
 Loaders contain only these directives:
 

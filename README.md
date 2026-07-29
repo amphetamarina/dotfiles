@@ -11,3 +11,4 @@ be committed.
 - Bash: `.bashrc`
 - tmux: `.tmux.conf` and `.config/tmux/`
 - Ghostty: `.config/ghostty/config.ghostty`
+- Pi global agent instructions: `.pi/agent/AGENTS.md`
