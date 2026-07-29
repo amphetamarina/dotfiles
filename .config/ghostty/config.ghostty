@@ -1,0 +1,23 @@
+# Annotation Mono — Loopy upright italic
+# CRSV=1 selects cursive forms; slnt=0 keeps them upright.
+# ss02 replaces the loopy forms, so explicitly keep it disabled.
+font-family = "Annotation Mono"
+font-size = 14
+# Select the font's advertised upright-italic named instances explicitly.
+font-style = "Regular Upright Italic"
+font-style-bold = "Bold Upright Italic"
+font-style-italic = "Regular Upright Italic"
+font-style-bold-italic = "Bold Upright Italic"
+font-feature = -ss02
+font-variation = slnt=0
+font-variation = CRSV=1
+font-variation-bold = slnt=0
+font-variation-bold = CRSV=1
+font-variation-italic = slnt=0
+font-variation-italic = CRSV=1
+font-variation-bold-italic = slnt=0
+font-variation-bold-italic = CRSV=1
+
+# Light terminal and window theme
+theme = "GitHub Light Default"
+window-theme = light

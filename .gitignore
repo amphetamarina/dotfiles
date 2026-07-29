@@ -1,0 +1,8 @@
+# Keep machine-local and sensitive files out of the public repository.
+*.local
+.env
+.env.*
+**/secrets
+**/secrets.*
+**/*credentials*
+**/*token*
