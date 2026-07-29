@@ -11,6 +11,10 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
+# Use Helix for programs that open a terminal editor.
+export EDITOR=hx
+export VISUAL="$EDITOR"
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
