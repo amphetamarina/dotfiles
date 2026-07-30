@@ -4,11 +4,21 @@
       "baseUrl": "https://api.inceptionlabs.ai/v1",
       "api": "openai-completions",
       "apiKey": "$INCEPTION_API_KEY",
+      "compat": {
+        "supportsDeveloperRole": false
+      },
       "models": [
         {
           "id": "mercury-2",
           "name": "Mercury 2",
           "reasoning": true,
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": "instant",
+            "low": "low",
+            "medium": "medium",
+            "high": "high"
+          },
           "contextWindow": 128000
         }
       ]
