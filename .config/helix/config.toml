@@ -7,4 +7,4 @@ line-number = "relative"
 enable = true
 
 [keys.normal.space]
-t = ":vsplit /home/amphetamarina/workspace/dotfiles/.config/helix/cheatsheet.md"
+t = ":hsplit /home/amphetamarina/workspace/dotfiles/.config/helix/cheatsheet.md"

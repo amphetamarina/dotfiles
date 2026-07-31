@@ -21,6 +21,8 @@ Helix uses **select, then act**. A motion selects text. An edit command acts on 
 | Key | Action |
 |---|---|
 | `h` `j` `k` `l` | Move left, down, up, right |
+| `gh` | Move to the beginning of the line |
+| `gl` | Move to the end of the line |
 | `w` / `b` | Select to the next / previous word |
 | `e` | Select to the end of the word |
 | `W` `B` `E` | Move by whitespace-separated words |
