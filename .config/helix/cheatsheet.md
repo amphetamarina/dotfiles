@@ -95,6 +95,8 @@ All edits apply to all active selections at the same time.
 - **Change a word:** `e c new text Esc`
 - **Delete a line:** `x d`
 - **Copy a line:** `x y p`
+- **Copy to another app:** select text, press `Space y`, then use `Ctrl-v` in the other app
+- **Paste from another app:** copy there with `Ctrl-c`, then press `Space p` in Helix
 - **Extend a selection:** `v`, then use movement keys
 - **Edit repeated text:** select a range, press `s`, enter a pattern, then press `c`
 - **Recover from a mistake:** press `u`
