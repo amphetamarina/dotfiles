@@ -22,6 +22,7 @@ Local path: `~/workspace/dotfiles`.
 | Ghostty | `~/.config/ghostty/config.ghostty` | `.config/ghostty/config.ghostty` |
 | Helix | `~/.local/bin/hx` | `.config/helix/config.toml` |
 | GNOME input | `~/.config/autostart/dotfiles-input-settings.desktop` | `.config/gnome/apply-input-settings.sh` |
+| Herdr | `HERDR_CONFIG_PATH` in Bash | `.config/herdr/config.toml` |
 | Pi | `~/.pi/agent/` loaders | `.pi/agent/` |
 
 Tmux helper scripts are in `.config/tmux/`. Pi loaders point to the canonical
@@ -35,6 +36,7 @@ Loaders contain only these directives:
 Ghostty: config-file = "/home/amphetamarina/workspace/dotfiles/.config/ghostty/config.ghostty"
 Helix: /usr/bin/hx --config ~/workspace/dotfiles/.config/helix/config.toml
 GNOME input: run ~/workspace/dotfiles/.config/gnome/apply-input-settings.sh
+Herdr: export HERDR_CONFIG_PATH="$HOME/workspace/dotfiles/.config/herdr/config.toml"
 ```
 
 For a new app, store its config in this repo and use the app's native include

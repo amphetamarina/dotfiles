@@ -15,6 +15,9 @@ export PATH
 export EDITOR=hx
 export VISUAL="$EDITOR"
 
+# Use the Herdr configuration from this repository.
+export HERDR_CONFIG_PATH="$HOME/workspace/dotfiles/.config/herdr/config.toml"
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 

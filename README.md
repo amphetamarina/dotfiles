@@ -13,4 +13,5 @@ be committed.
 - Ghostty: `.config/ghostty/config.ghostty`
 - Helix: `.config/helix/config.toml`
 - GNOME input settings: `.config/gnome/apply-input-settings.sh`
+- Herdr: `.config/herdr/config.toml`
 - Pi global agent instructions, extensions, and skills: `.pi/agent/`
