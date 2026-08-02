@@ -20,7 +20,7 @@ Local path: `~/workspace/dotfiles`.
 | Bash | `~/.bashrc` | `.bashrc` |
 | tmux | `~/.tmux.conf` | `.tmux.conf` |
 | Ghostty | `~/.config/ghostty/config.ghostty` | `.config/ghostty/config.ghostty` |
-| Helix | `~/.local/bin/hx` | `.config/helix/config.toml` |
+| Red | `~/.config/red/config.toml` (runtime copy) | `.config/red/config.toml` |
 | GNOME input | `~/.config/autostart/dotfiles-input-settings.desktop` | `.config/gnome/apply-input-settings.sh` |
 | Herdr | `HERDR_CONFIG_PATH` in Bash | `.config/herdr/config.toml` |
 | Pi | `~/.pi/agent/` loaders | `.pi/agent/` |
@@ -34,10 +34,13 @@ Loaders contain only these directives:
 ~/.bashrc: source ~/workspace/dotfiles/.bashrc
 ~/.tmux.conf: source-file ~/workspace/dotfiles/.tmux.conf
 Ghostty: config-file = "/home/amphetamarina/workspace/dotfiles/.config/ghostty/config.ghostty"
-Helix: /usr/bin/hx --config ~/workspace/dotfiles/.config/helix/config.toml
+Red: copy ~/workspace/dotfiles/.config/red/config.toml to ~/.config/red/config.toml
 GNOME input: run ~/workspace/dotfiles/.config/gnome/apply-input-settings.sh
 Herdr: export HERDR_CONFIG_PATH="$HOME/workspace/dotfiles/.config/herdr/config.toml"
 ```
+
+Red cannot include another config file. Keep its canonical config in this repo.
+Copy the canonical config to Red's standard config path.
 
 For a new app, store its config in this repo and use the app's native include
 command in its standard config file. Do not use a symlink. Ask the user if the
@@ -49,6 +52,7 @@ app cannot include another file. Update `README.md`.
 bash -n ~/.bashrc ~/workspace/dotfiles/.bashrc
 tmux source-file ~/.tmux.conf
 ghostty +validate-config
+red --check-config
 git diff --check
 git status --short
 ```

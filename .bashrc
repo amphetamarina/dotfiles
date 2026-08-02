@@ -11,8 +11,8 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
-# Use Helix for programs that open a terminal editor.
-export EDITOR=hx
+# Use Red for programs that open a terminal editor.
+export EDITOR=red
 export VISUAL="$EDITOR"
 
 # Use the Herdr configuration from this repository.

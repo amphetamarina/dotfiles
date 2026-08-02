@@ -11,10 +11,23 @@ be committed.
 - Bash: `.bashrc`
 - tmux: `.tmux.conf` and `.config/tmux/`
 - Ghostty: `.config/ghostty/config.ghostty`
-- Helix: `.config/helix/config.toml`
+- Red: `.config/red/config.toml`
 - GNOME input settings: `.config/gnome/apply-input-settings.sh`
 - Herdr: `.config/herdr/config.toml`
 - Pi global instructions, settings, extensions, and skills: `.pi/agent/`
+
+## Red
+
+Red 0.3.0 cannot include another configuration file. Copy the canonical file
+to Red's standard configuration path:
+
+```bash
+install -m 644 .config/red/config.toml ~/.config/red/config.toml
+```
+
+Only relative line numbers were selected for migration from Helix. Red 0.3.0
+does not support them. The canonical Red configuration is intentionally minimal
+until Red adds this feature.
 
 ## Pi packages
 
