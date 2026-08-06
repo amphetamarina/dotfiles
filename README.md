@@ -30,6 +30,13 @@ Keep generated and machine-local Nushell files in the runtime directory.
 
 ## Ghostty
 
+Keep the runtime configuration small. Load the canonical configuration from
+this repository:
+
+```ini
+config-file = "/home/amphetamarina/Workspace/dotfiles/.config/ghostty/config.ghostty"
+```
+
 The Ghostty configuration uses
 [Annotation Mono](https://qwerasd205.github.io/AnnotationMono/).
 Install its variable font as `~/.local/share/fonts/AnnotationMono-VF.ttf` and
