@@ -9,7 +9,6 @@ be committed.
 ## Managed configuration
 
 - Bash: `.bashrc`
-- tmux: `.tmux.conf` and `.config/tmux/`
 - Ghostty: `.config/ghostty/config.ghostty`
 - Red: `.config/red/config.toml`
 - GNOME input settings: `.config/gnome/apply-input-settings.sh`
@@ -28,6 +27,13 @@ source ~/Workspace/dotfiles/.config/nushell/config.nu
 ```
 
 Keep generated and machine-local Nushell files in the runtime directory.
+
+## Ghostty
+
+The Ghostty configuration uses
+[Annotation Mono](https://qwerasd205.github.io/AnnotationMono/).
+Install its variable font as `~/.local/share/fonts/AnnotationMono-VF.ttf` and
+refresh the user font cache with `fc-cache -f ~/.local/share/fonts`.
 
 ## Red
 

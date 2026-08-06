@@ -18,7 +18,6 @@ Local path: `~/Workspace/dotfiles`.
 | App | Loader | Config in repo |
 | --- | --- | --- |
 | Bash | `~/.bashrc` | `.bashrc` |
-| tmux | `~/.tmux.conf` | `.tmux.conf` |
 | Ghostty | `~/.config/ghostty/config.ghostty` | `.config/ghostty/config.ghostty` |
 | Red | `~/.config/red/config.toml` (runtime copy) | `.config/red/config.toml` |
 | GNOME input | `~/.config/autostart/dotfiles-input-settings.desktop` | `.config/gnome/apply-input-settings.sh` |
@@ -27,15 +26,14 @@ Local path: `~/Workspace/dotfiles`.
 | Pi | `~/.pi/agent/` loaders | `.pi/agent/` |
 | Prime Agent | `~/.prime/agent/` runtime copies | `.pi/agent/AGENTS.md` and `.prime/agent/settings.json` |
 
-Tmux helper scripts are in `.config/tmux/`. Pi loaders point to the canonical
-agent instructions, extensions, and skills in this repo. Prime Agent uses the
-same global instructions as Pi and has its own canonical settings file.
+Pi loaders point to the canonical agent instructions, extensions, and skills
+in this repo. Prime Agent uses the same global instructions as Pi and has its
+own canonical settings file.
 
 Loaders contain only these directives:
 
 ```text
 ~/.bashrc: source ~/Workspace/dotfiles/.bashrc
-~/.tmux.conf: source-file ~/Workspace/dotfiles/.tmux.conf
 Ghostty: config-file = "/home/amphetamarina/Workspace/dotfiles/.config/ghostty/config.ghostty"
 Red: copy ~/Workspace/dotfiles/.config/red/config.toml to ~/.config/red/config.toml
 GNOME input: run ~/Workspace/dotfiles/.config/gnome/apply-input-settings.sh
@@ -56,7 +54,6 @@ app cannot include another file. Update `README.md`.
 
 ```bash
 bash -n ~/.bashrc ~/Workspace/dotfiles/.bashrc
-tmux source-file ~/.tmux.conf
 ghostty +validate-config
 red --check-config
 nu --config ~/.config/nushell/config.nu -c 'print "Nushell config OK"'
