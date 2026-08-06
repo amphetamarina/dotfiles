@@ -8,7 +8,6 @@ be committed.
 
 ## Managed configuration
 
-- Bash: `.bashrc`
 - Ghostty: `.config/ghostty/config.ghostty`
 - Red: `.config/red/config.toml`
 - GNOME input settings: `.config/gnome/apply-input-settings.sh`
@@ -26,7 +25,16 @@ this repository:
 source ~/Workspace/dotfiles/.config/nushell/config.nu
 ```
 
-Keep generated and machine-local Nushell files in the runtime directory.
+The canonical configuration sets the user `PATH`, editor variables, and the
+Herdr configuration path. It also loads the optional, gitignored `secrets`
+file. Use Nushell syntax in that file:
+
+```nu
+$env.EXAMPLE_API_KEY = "replace-with-a-machine-local-secret"
+```
+
+Keep the file private with mode `600`. Keep generated and other machine-local
+Nushell files in the runtime directory.
 
 ## Ghostty
 
