@@ -14,7 +14,9 @@ be committed.
 - Herdr: `.config/herdr/config.toml`
 - Nushell: `.config/nushell/config.nu`
 - Pi global instructions, settings, extensions, and skills: `.pi/agent/`
-- Prime Agent global instructions and settings: `.pi/agent/AGENTS.md` and `.prime/agent/settings.json`
+- Prime Agent global instructions, settings, and Exa skill:
+  `.pi/agent/AGENTS.md`, `.prime/agent/settings.json`, and
+  `.prime/agent/skills/exa/`
 
 ## Nushell
 
@@ -94,6 +96,13 @@ install -m 600 .prime/agent/settings.json ~/.prime/agent/settings.json
 ```
 
 The canonical settings contain portable preferences. `onboardingShown` prevents
-a new onboarding prompt after installation. The file does not contain the recent
-model list because that list is usage history. Do not commit Prime Agent
-credentials, sessions, logs, caches, or generated data.
+a new onboarding prompt after installation. The settings load the committed Exa
+MCP skill and use `EXA_API_KEY` from the environment. They disable the bundled
+Serper skill. The integration uses Exa's hosted HTTP endpoint because Prime Agent
+0.7 does not connect declared stdio servers to kernel skills.
+
+Start a new Prime Agent session from Nushell after you add or change the Exa key.
+A resource reload does not change the environment of an existing worker process.
+The settings file does not contain the recent model list because that list is
+usage history. Do not commit Prime Agent credentials, sessions, logs, caches, or
+generated data.

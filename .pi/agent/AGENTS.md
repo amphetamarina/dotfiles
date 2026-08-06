@@ -39,6 +39,13 @@
 - Use a native command only when RTK has no supported equivalent.
 - Use `RTK_DISABLED=1` when you need unfiltered output from a supported command.
 
+## Web search
+
+- Always use the Exa MCP `web_search_exa` tool for web searches.
+- Call `await exa.web_search_exa(query="...")` from IPython.
+- Do not use Serper or another web search provider.
+- Do not put `EXA_API_KEY` in tracked files or Prime Agent settings.
+
 ## Evidence
 
 - Give inspectable evidence for each factual claim.

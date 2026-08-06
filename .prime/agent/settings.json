@@ -3,5 +3,18 @@
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.6-sol",
   "defaultThinkingLevel": "medium",
-  "theme": "light"
+  "theme": "light",
+  "mcpServers": {
+    "exa": {
+      "type": "http",
+      "url": "https://mcp.exa.ai/mcp?tools=web_search_exa",
+      "bearerTokenEnvVar": "EXA_API_KEY"
+    }
+  },
+  "skills": [
+    "/home/amphetamarina/Workspace/dotfiles/.prime/agent/skills/exa"
+  ],
+  "bundledSkills": {
+    "websearch": false
+  }
 }

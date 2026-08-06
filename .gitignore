@@ -6,3 +6,5 @@
 **/secrets.*
 **/*credentials*
 **/*token*
+__pycache__/
+*.py[cod]
