@@ -14,7 +14,20 @@ be committed.
 - Red: `.config/red/config.toml`
 - GNOME input settings: `.config/gnome/apply-input-settings.sh`
 - Herdr: `.config/herdr/config.toml`
+- Nushell: `.config/nushell/config.nu`
 - Pi global instructions, settings, extensions, and skills: `.pi/agent/`
+- Prime Agent global instructions and settings: `.pi/agent/AGENTS.md` and `.prime/agent/settings.json`
+
+## Nushell
+
+Keep the runtime configuration small. Load the canonical configuration from
+this repository:
+
+```nu
+source ~/Workspace/dotfiles/.config/nushell/config.nu
+```
+
+Keep generated and machine-local Nushell files in the runtime directory.
 
 ## Red
 
@@ -48,3 +61,18 @@ install -m 600 .pi/agent/pi-codex-conversion.json ~/.pi/agent/pi-codex-conversio
 
 Do not commit Pi credentials, sessions, package files, or machine-specific
 audio device IDs.
+
+## Prime Agent
+
+Prime Agent uses the same global instructions as Pi. Prime Agent cannot load its
+settings from a second file. Copy the canonical files to its runtime directory:
+
+```bash
+install -m 644 .pi/agent/AGENTS.md ~/.prime/agent/AGENTS.md
+install -m 600 .prime/agent/settings.json ~/.prime/agent/settings.json
+```
+
+The canonical settings contain portable preferences. `onboardingShown` prevents
+a new onboarding prompt after installation. The file does not contain the recent
+model list because that list is usage history. Do not commit Prime Agent
+credentials, sessions, logs, caches, or generated data.
