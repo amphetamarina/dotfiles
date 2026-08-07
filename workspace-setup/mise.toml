@@ -1,0 +1,6 @@
+[tools]
+herdr = "latest"
+"github:nushell/nushell" = "latest"
+node = "26.7.0"
+python = "3.14.7"
+rust = "1.97.1"

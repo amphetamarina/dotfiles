@@ -7,5 +7,5 @@ font-size = 12
 font-synthetic-style = false
 
 # Dark terminal and window theme
-theme = "GitHub Dark Default"
+theme = "Catppuccin Mocha"
 window-theme = dark

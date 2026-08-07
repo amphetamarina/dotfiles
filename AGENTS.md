@@ -22,6 +22,7 @@ Local path: `~/Workspace/dotfiles`.
 | GNOME input | `~/.config/autostart/dotfiles-input-settings.desktop` | `.config/gnome/apply-input-settings.sh` |
 | Herdr | `HERDR_CONFIG_PATH` in Nushell | `.config/herdr/config.toml` |
 | Nushell | `~/.config/nushell/config.nu` | `.config/nushell/config.nu` |
+| Workspace tools | `~/Workspace/mise.toml` | `workspace-setup/mise.toml` |
 | Pi | `~/.pi/agent/` loaders | `.pi/agent/` |
 | Prime Agent | `~/.prime/agent/` runtime files | `.pi/agent/AGENTS.md`, `.prime/agent/settings.json`, and `.prime/agent/skills/exa/` |
 
@@ -37,6 +38,7 @@ Red: copy ~/Workspace/dotfiles/.config/red/config.toml to ~/.config/red/config.t
 GNOME input: run ~/Workspace/dotfiles/.config/gnome/apply-input-settings.sh
 Herdr: $env.HERDR_CONFIG_PATH = "/home/amphetamarina/Workspace/dotfiles/.config/herdr/config.toml"
 Nushell: source ~/Workspace/dotfiles/.config/nushell/config.nu
+Workspace tools: copy ~/Workspace/dotfiles/workspace-setup/mise.toml to ~/Workspace/mise.toml
 Prime Agent instructions: copy .pi/agent/AGENTS.md to ~/.prime/agent/AGENTS.md
 Prime Agent settings: copy .prime/agent/settings.json to ~/.prime/agent/settings.json
 ```

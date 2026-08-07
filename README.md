@@ -18,6 +18,31 @@ be committed.
   `.pi/agent/AGENTS.md`, `.prime/agent/settings.json`, and
   `.prime/agent/skills/exa/`
 
+## Workspace tools
+
+Copy the canonical mise configuration into the Workspace directory, then
+install the configured tools:
+
+```bash
+install -m 644 workspace-setup/mise.toml ~/Workspace/mise.toml
+cd ~/Workspace
+mise install
+```
+
+The configuration installs Node.js, Python, Rust, Nushell, and Herdr. Activate
+mise in Bash by adding this line to `~/.bashrc`:
+
+```bash
+eval "$(mise activate bash)"
+```
+
+Generate the mise module used by Nushell:
+
+```bash
+mkdir -p ~/.config/nushell
+mise activate nu > ~/.config/nushell/mise.nu
+```
+
 ## Nushell
 
 Keep the runtime configuration small. Load the canonical configuration from
@@ -25,6 +50,13 @@ this repository:
 
 ```nu
 source ~/Workspace/dotfiles/.config/nushell/config.nu
+```
+
+After creating the loader and mise module, launch Nushell from the Workspace:
+
+```bash
+cd ~/Workspace
+mise exec -- nu
 ```
 
 The canonical configuration sets the user `PATH`, editor variables, and the
