@@ -9,7 +9,6 @@ be committed.
 ## Managed configuration
 
 - Ghostty: `.config/ghostty/config.ghostty`
-- Red: `.config/red/config.toml`
 - GNOME input settings: `.config/gnome/apply-input-settings.sh`
 - Herdr: `.config/herdr/config.toml`
 - Nushell: `.config/nushell/config.nu`
@@ -59,9 +58,9 @@ cd ~/Workspace
 mise exec -- nu
 ```
 
-The canonical configuration sets the user `PATH`, editor variables, and the
-Herdr configuration path. It also loads the optional, gitignored `secrets`
-file. Use Nushell syntax in that file:
+The canonical configuration sets the user `PATH` and the Herdr configuration
+path. It also loads the optional, gitignored `secrets` file. Use Nushell syntax
+in that file:
 
 ```nu
 $env.EXAMPLE_API_KEY = "replace-with-a-machine-local-secret"
@@ -78,24 +77,6 @@ this repository:
 ```ini
 config-file = "/home/amphetamarina/Workspace/dotfiles/.config/ghostty/config.ghostty"
 ```
-
-The Ghostty configuration uses
-[Annotation Mono](https://qwerasd205.github.io/AnnotationMono/).
-Install its variable font as `~/.local/share/fonts/AnnotationMono-VF.ttf` and
-refresh the user font cache with `fc-cache -f ~/.local/share/fonts`.
-
-## Red
-
-Red 0.3.0 cannot include another configuration file. Copy the canonical file
-to Red's standard configuration path:
-
-```bash
-install -m 644 .config/red/config.toml ~/.config/red/config.toml
-```
-
-Only relative line numbers were selected for migration from Helix. Red 0.3.0
-does not support them. The canonical Red configuration is intentionally minimal
-until Red adds this feature.
 
 ## Pi packages
 

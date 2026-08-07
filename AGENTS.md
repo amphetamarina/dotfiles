@@ -18,7 +18,6 @@ Local path: `~/Workspace/dotfiles`.
 | App | Loader | Config in repo |
 | --- | --- | --- |
 | Ghostty | `~/.config/ghostty/config.ghostty` | `.config/ghostty/config.ghostty` |
-| Red | `~/.config/red/config.toml` (runtime copy) | `.config/red/config.toml` |
 | GNOME input | `~/.config/autostart/dotfiles-input-settings.desktop` | `.config/gnome/apply-input-settings.sh` |
 | Herdr | `HERDR_CONFIG_PATH` in Nushell | `.config/herdr/config.toml` |
 | Nushell | `~/.config/nushell/config.nu` | `.config/nushell/config.nu` |
@@ -34,7 +33,6 @@ Loaders contain only these directives:
 
 ```text
 Ghostty: config-file = "/home/amphetamarina/Workspace/dotfiles/.config/ghostty/config.ghostty"
-Red: copy ~/Workspace/dotfiles/.config/red/config.toml to ~/.config/red/config.toml
 GNOME input: run ~/Workspace/dotfiles/.config/gnome/apply-input-settings.sh
 Herdr: $env.HERDR_CONFIG_PATH = "/home/amphetamarina/Workspace/dotfiles/.config/herdr/config.toml"
 Nushell: source ~/Workspace/dotfiles/.config/nushell/config.nu
@@ -43,8 +41,8 @@ Prime Agent instructions: copy .pi/agent/AGENTS.md to ~/.prime/agent/AGENTS.md
 Prime Agent settings: copy .prime/agent/settings.json to ~/.prime/agent/settings.json
 ```
 
-Red and Prime Agent cannot include these canonical files. Keep the canonical
-files in this repo. Copy them to their standard runtime paths.
+Prime Agent cannot include its canonical settings file. Keep the canonical file
+in this repo. Copy it to the standard runtime path.
 
 For a new app, store its config in this repo and use the app's native include
 command in its standard config file. Do not use a symlink. Ask the user if the
@@ -54,7 +52,6 @@ app cannot include another file. Update `README.md`.
 
 ```bash
 ghostty +validate-config
-red --check-config
 nu --config ~/.config/nushell/config.nu -c 'print "Nushell config OK"'
 python -m json.tool .prime/agent/settings.json >/dev/null
 git diff --check

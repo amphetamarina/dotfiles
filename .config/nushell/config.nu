@@ -6,10 +6,6 @@ let local_bin = ($env.HOME | path join ".local" "bin")
 let user_bin = ($env.HOME | path join "bin")
 $env.PATH = ([$local_bin $user_bin ...$env.PATH] | uniq)
 
-# Use Red for programs that open a terminal editor.
-$env.EDITOR = "red"
-$env.VISUAL = $env.EDITOR
-
 # Use the Herdr configuration from this repository.
 $env.HERDR_CONFIG_PATH = ($env.HOME | path join "Workspace" "dotfiles" ".config" "herdr" "config.toml")
 
