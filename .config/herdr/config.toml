@@ -2,6 +2,7 @@ onboarding = false
 
 [terminal]
 default_shell = "nu"
+new_cwd = "~/Workspace"
 
 [theme]
 name = "catppuccin-latte"
