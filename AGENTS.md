@@ -23,7 +23,7 @@ Local path: `~/Workspace/dotfiles`.
 | Nushell | `~/.config/nushell/config.nu` | `.config/nushell/config.nu` |
 | Workspace tools | `~/Workspace/mise.toml` | `workspace-setup/mise.toml` |
 | Pi | `~/.pi/agent/` loaders | `.pi/agent/` |
-| Prime Agent | `~/.prime/agent/` runtime files | `.pi/agent/AGENTS.md`, `.prime/agent/settings.json`, `.prime/agent/models.json`, and `.prime/agent/skills/exa/` |
+| Prime Agent | `~/.prime/agent/` runtime files | `.pi/agent/AGENTS.md`, `.prime/agent/settings.json`, `.prime/agent/models.json`, `.prime/agent/extensions/`, and `.prime/agent/skills/exa/` |
 
 Pi loaders point to the canonical agent instructions, extensions, and skills
 in this repo. Prime Agent uses the same global instructions as Pi and has its

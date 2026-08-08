@@ -115,9 +115,12 @@ MCP skill and use `EXA_API_KEY` from the environment. They disable the bundled
 Serper skill. The custom model file adds Featherless AI and uses
 `FEATHERLESS_API_KEY` from the environment. The model file uses the Featherless
 32K hosted context limit. The settings reserve 20K tokens and keep 2K recent
-tokens so Prime Agent can compact a long session before a request fails. The Exa
-integration uses its hosted HTTP endpoint because Prime Agent 0.7 does not
-connect declared stdio servers to kernel skills.
+tokens so Prime Agent can compact a long session before a request fails. The
+Qwythos request extension enables sampling. It sets `temperature` to 0.6, `top_p`
+to 0.95, `top_k` to 20, and `repetition_penalty` to 1.05. Prime Agent maps the
+16,384-token output limit to Featherless `max_tokens`. The Exa integration uses
+its hosted HTTP endpoint because Prime Agent 0.7 does not connect declared stdio
+servers to kernel skills.
 
 Start a new Prime Agent session from Nushell after you add or change either
 API key. A resource reload does not change the environment of an existing worker

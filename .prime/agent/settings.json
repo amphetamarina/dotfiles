@@ -9,6 +9,9 @@
     "keepRecentTokens": 2000
   },
   "theme": "prime",
+  "extensions": [
+    "/home/amphetamarina/Workspace/dotfiles/.prime/agent/extensions/featherless-qwythos-sampling.ts"
+  ],
   "mcpServers": {
     "exa": {
       "type": "http",
