@@ -106,16 +106,20 @@ settings from a second file. Copy the canonical files to its runtime directory:
 ```bash
 install -m 644 .pi/agent/AGENTS.md ~/.prime/agent/AGENTS.md
 install -m 600 .prime/agent/settings.json ~/.prime/agent/settings.json
+install -m 600 .prime/agent/models.json ~/.prime/agent/models.json
 ```
 
 The canonical settings contain portable preferences. `onboardingShown` prevents
 a new onboarding prompt after installation. The settings load the committed Exa
 MCP skill and use `EXA_API_KEY` from the environment. They disable the bundled
-Serper skill. The integration uses Exa's hosted HTTP endpoint because Prime Agent
-0.7 does not connect declared stdio servers to kernel skills.
+Serper skill. The custom model file adds Featherless AI and uses
+`FEATHERLESS_API_KEY` from the environment. The integration uses Exa's hosted
+HTTP endpoint because Prime Agent 0.7 does not connect declared stdio servers to
+kernel skills.
 
-Start a new Prime Agent session from Nushell after you add or change the Exa key.
-A resource reload does not change the environment of an existing worker process.
+Start a new Prime Agent session from Nushell after you add or change either
+API key. A resource reload does not change the environment of an existing worker
+process.
 The settings file does not contain the recent model list because that list is
 usage history. Do not commit Prime Agent credentials, sessions, logs, caches, or
 generated data.

@@ -23,11 +23,11 @@ Local path: `~/Workspace/dotfiles`.
 | Nushell | `~/.config/nushell/config.nu` | `.config/nushell/config.nu` |
 | Workspace tools | `~/Workspace/mise.toml` | `workspace-setup/mise.toml` |
 | Pi | `~/.pi/agent/` loaders | `.pi/agent/` |
-| Prime Agent | `~/.prime/agent/` runtime files | `.pi/agent/AGENTS.md`, `.prime/agent/settings.json`, and `.prime/agent/skills/exa/` |
+| Prime Agent | `~/.prime/agent/` runtime files | `.pi/agent/AGENTS.md`, `.prime/agent/settings.json`, `.prime/agent/models.json`, and `.prime/agent/skills/exa/` |
 
 Pi loaders point to the canonical agent instructions, extensions, and skills
 in this repo. Prime Agent uses the same global instructions as Pi and has its
-own canonical settings file.
+own canonical settings and custom model files.
 
 Loaders contain only these directives:
 
@@ -39,10 +39,11 @@ Nushell: source ~/Workspace/dotfiles/.config/nushell/config.nu
 Workspace tools: copy ~/Workspace/dotfiles/workspace-setup/mise.toml to ~/Workspace/mise.toml
 Prime Agent instructions: copy .pi/agent/AGENTS.md to ~/.prime/agent/AGENTS.md
 Prime Agent settings: copy .prime/agent/settings.json to ~/.prime/agent/settings.json
+Prime Agent models: copy .prime/agent/models.json to ~/.prime/agent/models.json
 ```
 
-Prime Agent cannot include its canonical settings file. Keep the canonical file
-in this repo. Copy it to the standard runtime path.
+Prime Agent cannot include its canonical settings or custom model file. Keep the
+canonical files in this repo. Copy them to the standard runtime path.
 
 For a new app, store its config in this repo and use the app's native include
 command in its standard config file. Do not use a symlink. Ask the user if the
@@ -54,6 +55,7 @@ app cannot include another file. Update `README.md`.
 ghostty +validate-config
 nu --config ~/.config/nushell/config.nu -c 'print "Nushell config OK"'
 python -m json.tool .prime/agent/settings.json >/dev/null
+python -m json.tool .prime/agent/models.json >/dev/null
 git diff --check
 git status --short
 ```

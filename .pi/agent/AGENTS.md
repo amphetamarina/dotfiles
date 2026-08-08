@@ -16,6 +16,7 @@
 
 - Use `~/Workspace/dotfiles/.pi/agent/` as the canonical reference for shared global instructions and Pi configuration.
 - Use `~/Workspace/dotfiles/.prime/agent/settings.json` as the canonical reference for Prime Agent settings.
+- Use `~/Workspace/dotfiles/.prime/agent/models.json` as the canonical reference for Prime Agent custom models.
 - Make agent configuration changes in this repository first.
 - Treat `~/.pi/agent/` and `~/.prime/agent/` as runtime locations.
 - Copy canonical files to a runtime location when an agent cannot load them from this repository.

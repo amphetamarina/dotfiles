@@ -1,0 +1,41 @@
+{
+  "providers": {
+    "featherless": {
+      "name": "Featherless AI",
+      "baseUrl": "https://api.featherless.ai/v1",
+      "apiKey": "FEATHERLESS_API_KEY",
+      "api": "openai-completions",
+      "compat": {
+        "supportsStore": false,
+        "supportsDeveloperRole": false,
+        "supportsReasoningEffort": false,
+        "supportsUsageInStreaming": false,
+        "maxTokensField": "max_tokens",
+        "thinkingFormat": "qwen-chat-template",
+        "supportsStrictMode": false,
+        "supportsLongCacheRetention": false
+      },
+      "models": [
+        {
+          "id": "empero-ai/Qwythos-9B-Claude-Mythos-5-1M",
+          "name": "Qwythos 9B Claude Mythos 5 (1M)",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
+            "low": null,
+            "medium": null,
+            "xhigh": null,
+            "max": null
+          },
+          "input": [
+            "text",
+            "image"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 16384
+        }
+      ]
+    }
+  }
+}
