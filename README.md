@@ -10,6 +10,7 @@ be committed.
 
 - Ghostty: `.config/ghostty/config.ghostty`
 - GNOME input settings: `.config/gnome/apply-input-settings.sh`
+- GNOME screencast conversion: `.config/screencast/screencast-convert.sh` and `.config/systemd/user/screencast-convert.*`
 - Herdr: `.config/herdr/config.toml`
 - Nushell: `.config/nushell/config.nu`
 - Pi global instructions, settings, extensions, and skills: `.pi/agent/`
@@ -76,6 +77,31 @@ this repository:
 
 ```ini
 config-file = "/home/amphetamarina/Workspace/dotfiles/.config/ghostty/config.ghostty"
+```
+
+## Screencast conversion
+
+GNOME records screencasts as WebM. Twitter and X reject WebM uploads. A user
+systemd path unit converts each new screencast to an MP4 that Twitter and X
+accept.
+
+The conversion runs ffmpeg. It sets 30 fps, even frame dimensions, H.264, and
+the yuv420p pixel format. It adds the faststart flag.
+
+Install the script and the units:
+
+```bash
+install -m 755 .config/screencast/screencast-convert.sh ~/.local/bin/screencast-convert.sh
+install -m 644 .config/systemd/user/screencast-convert.path ~/.config/systemd/user/
+install -m 644 .config/systemd/user/screencast-convert.service ~/.config/systemd/user/
+systemctl --user daemon-reload
+systemctl --user enable --now screencast-convert.path
+```
+
+Convert all existing recordings at any time:
+
+```bash
+systemctl --user start screencast-convert.service
 ```
 
 ## Pi packages

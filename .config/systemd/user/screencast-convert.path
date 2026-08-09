@@ -1,0 +1,9 @@
+[Unit]
+Description=Watch for new GNOME screencasts
+
+[Path]
+PathChanged=%h/Videos/Screencasts
+Unit=screencast-convert.service
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,7 @@
+[Unit]
+Description=Convert GNOME screencasts to Twitter-ready MP4
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sleep 3
+ExecStart=%h/.local/bin/screencast-convert.sh
