@@ -13,6 +13,7 @@ be committed.
 - GNOME screencast conversion: `.config/screencast/screencast-convert.sh` and `.config/systemd/user/screencast-convert.*`
 - Herdr: `.config/herdr/config.toml`
 - Nushell: `.config/nushell/config.nu`
+- Rio: `.config/rio/config.toml`
 - Pi global instructions, settings, extensions, and skills: `.pi/agent/`
 - Prime Agent global instructions, settings, and Exa skill:
   `.pi/agent/AGENTS.md`, `.prime/agent/settings.json`, and
@@ -42,6 +43,32 @@ Generate the mise module used by Nushell:
 mkdir -p ~/.config/nushell
 mise activate nu > ~/.config/nushell/mise.nu
 ```
+
+### Rio terminal
+
+Install the latest stable Rio release for the current Debian/Ubuntu architecture
+and display server:
+
+```bash
+./workspace-setup/install-rio.sh
+```
+
+The installer rejects drafts and prereleases, downloads the matching official
+`.deb`, verifies its SHA-256 digest from GitHub's release metadata, validates the
+package identity, and then installs it with APT. It requires `curl` and `jq`.
+
+Rio does not support including another configuration file. Copy the canonical
+configuration into its standard runtime location:
+
+```bash
+mkdir -p ~/.config/rio
+install -m 644 .config/rio/config.toml ~/.config/rio/config.toml
+```
+
+The configuration ports the Ghostty setup to MonoLisa Code at 13 pt with the
+`ss01`, `dlig`, and `calt` OpenType features and Kanagawa colors. It is
+tuned for the 4K display at 2x scale with font hinting, native Vulkan rendering,
+Nerd Font symbol mapping, drawable box characters, and opaque sRGB output.
 
 ## Nushell
 

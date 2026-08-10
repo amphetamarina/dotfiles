@@ -5,4 +5,44 @@ default_shell = "nu"
 new_cwd = "~/Workspace"
 
 [theme]
-name = "catppuccin-latte"
+name = "kanagawa"
+
+[theme.custom]
+# Herdr's stock Kanagawa uses the panel background for surface_dim, which
+# makes the section rule and active rows disappear. Keep it subtle but visible.
+surface_dim = "#2a2a37"
+overlay0 = "#87867d"
+
+[ui]
+sidebar_width = 26
+sidebar_min_width = 24
+sidebar_max_width = 30
+pane_borders = true
+pane_gaps = true
+pane_scrollbars = false
+show_agent_labels_on_pane_borders = true
+accent = "#7e9cd8"
+
+[ui.sidebar.spaces]
+row_gap = 0
+rows = [
+  ["state_icon", { token = "workspace", fg = "#dcd7ba", bold = false }],
+  [
+    { token = "branch", fg = "#7e9cd8", dim = false },
+    { token = "git_status", bold = false },
+  ],
+]
+
+[ui.sidebar.agents]
+row_gap = 0
+rows = [
+  [
+    "state_icon",
+    { token = "workspace", fg = "#dcd7ba", bold = false },
+    { token = "tab", fg = "#c8c3aa", dim = false },
+  ],
+  [
+    { token = "agent", fg = "#957fb8", bold = false },
+    { token = "state_text", fg = "#87867d", dim = false },
+  ],
+]
