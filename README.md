@@ -68,10 +68,10 @@ install -m 644 .config/rio/config.toml ~/.config/rio/config.toml
 install -m 644 .config/rio/themes/*.toml ~/.config/rio/themes/
 ```
 
-The configuration uses MonoLisa Code Italic at 16 pt with its script alternates
-and full recommended coding-ligature feature set. Rio always uses GitHub Light
-Default, regardless of the desktop appearance; SynthWave '84 remains installed
-as an optional theme. It is tuned for the high-density 4K display with font
+The configuration uses MonoLisa Code Italic at 18 pt and medium weight. It uses
+the script alternates and full recommended coding-ligature feature set. Rio always
+uses GitHub Light Default, regardless of the desktop appearance. SynthWave '84
+remains installed as an optional theme. It is tuned for the high-density 4K display with font
 hinting, native Vulkan rendering, Nerd Font symbol mapping, drawable box
 characters, and opaque sRGB output.
 

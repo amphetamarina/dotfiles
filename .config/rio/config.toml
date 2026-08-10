@@ -15,7 +15,7 @@ dark = "synthwave-84"
 
 [fonts]
 family = "MonoLisaCode"
-size = 16
+size = 18
 hinting = true
 features = [
   "ss01",
@@ -44,11 +44,11 @@ symbol-map = [
   { start = "E000", end = "F8FF", font-family = "MonoLisaCode Nerd Font" },
 ]
 
-# Use MonoLisa's italic face as the primary terminal face. With ss01 enabled,
-# this selects the script-style letterforms for ordinary text as well.
+# Use MonoLisa's italic face at medium weight as the primary terminal face.
+# With ss01 enabled, this selects the script-style letterforms for ordinary text.
 [fonts.regular]
 style = "Italic"
-weight = 400
+weight = 500
 
 # MonoLisaCode is a variable font. Rio 0.5.19 renders its bold axis with
 # incorrect terminal-cell advances, which makes bold TUI labels overlap.
@@ -61,7 +61,7 @@ style = false
 
 [fonts.italic]
 style = "Italic"
-weight = 400
+weight = 500
 
 [renderer]
 backend = "vulkan"
