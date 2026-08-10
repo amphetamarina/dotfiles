@@ -8,6 +8,7 @@ be committed.
 
 ## Managed configuration
 
+- APT IPv4 setting: `apt/apt.conf.d/99force-ipv4`
 - GNOME input settings: `.config/gnome/apply-input-settings.sh`
 - GNOME screencast conversion: `.config/screencast/screencast-convert.sh` and `.config/systemd/user/screencast-convert.*`
 - Herdr: `.config/herdr/config.toml`
@@ -19,6 +20,17 @@ be committed.
 - Prime Agent global instructions, settings, theme, and Exa skill:
   `.pi/agent/AGENTS.md`, `.prime/agent/settings.json`, and
   `.prime/agent/themes/`, `.prime/agent/skills/exa/`
+
+## APT
+
+APT uses IPv4 for all package downloads. Install the canonical setting into
+APT's system configuration directory:
+
+```bash
+sudo install -m 644 apt/apt.conf.d/99force-ipv4 /etc/apt/apt.conf.d/99force-ipv4
+```
+
+The setting takes effect on the next APT command.
 
 ## Workspace tools
 
