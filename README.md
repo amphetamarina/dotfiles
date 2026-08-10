@@ -64,8 +64,8 @@ mkdir -p ~/.config/rio
 install -m 644 .config/rio/config.toml ~/.config/rio/config.toml
 ```
 
-The configuration uses MonoLisa Code at 13 pt with the `ss01`, `dlig`, and
-`calt` OpenType features and Kanagawa colors. It is
+The configuration uses MonoLisa Code Italic at 14 pt with its script alternates
+and full recommended coding-ligature feature set, plus SynthWave '84 colors. It is
 tuned for the 4K display at 2x scale with font hinting, native Vulkan rendering,
 Nerd Font symbol mapping, drawable box characters, and opaque sRGB output.
 
