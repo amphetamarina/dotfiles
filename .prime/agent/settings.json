@@ -8,7 +8,7 @@
     "reserveTokens": 20000,
     "keepRecentTokens": 2000
   },
-  "theme": "prime",
+  "theme": "github-light-default",
   "extensions": [
     "/home/amphetamarina/Workspace/dotfiles/.prime/agent/extensions/featherless-qwythos-sampling.ts"
   ],

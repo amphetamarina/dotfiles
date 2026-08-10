@@ -14,9 +14,11 @@ be committed.
 - Nushell: `.config/nushell/config.nu`
 - Rio: `.config/rio/config.toml`
 - Pi global instructions, settings, extensions, and skills: `.pi/agent/`
-- Prime Agent global instructions, settings, and Exa skill:
+- Codex settings and shared global instructions: `.codex/config.toml` and
+  `.pi/agent/AGENTS.md`
+- Prime Agent global instructions, settings, theme, and Exa skill:
   `.pi/agent/AGENTS.md`, `.prime/agent/settings.json`, and
-  `.prime/agent/skills/exa/`
+  `.prime/agent/themes/`, `.prime/agent/skills/exa/`
 
 ## Workspace tools
 
@@ -61,13 +63,17 @@ configuration into its standard runtime location:
 
 ```bash
 mkdir -p ~/.config/rio
+mkdir -p ~/.config/rio/themes
 install -m 644 .config/rio/config.toml ~/.config/rio/config.toml
+install -m 644 .config/rio/themes/*.toml ~/.config/rio/themes/
 ```
 
-The configuration uses MonoLisa Code Italic at 14 pt with its script alternates
-and full recommended coding-ligature feature set, plus SynthWave '84 colors. It is
-tuned for the 4K display at 2x scale with font hinting, native Vulkan rendering,
-Nerd Font symbol mapping, drawable box characters, and opaque sRGB output.
+The configuration uses MonoLisa Code Italic at 16 pt with its script alternates
+and full recommended coding-ligature feature set. Rio follows the desktop
+appearance with SynthWave '84 for dark mode and GitHub Light Default for light
+mode. It is tuned for the high-density 4K display with font hinting, native
+Vulkan rendering, Nerd Font symbol mapping, drawable box characters, and opaque
+sRGB output.
 
 ## Nushell
 
@@ -145,6 +151,23 @@ install -m 600 .pi/agent/pi-codex-conversion.json ~/.pi/agent/pi-codex-conversio
 Do not commit Pi credentials, sessions, package files, or machine-specific
 audio device IDs.
 
+## Codex
+
+Codex uses the portable settings in this repository. It also uses the same
+global instructions as Pi and Prime Agent:
+
+```bash
+mkdir -p ~/.codex
+install -m 600 .codex/config.toml ~/.codex/config.toml
+install -m 644 .pi/agent/AGENTS.md ~/.codex/AGENTS.md
+```
+
+The Codex CLI reads [user settings](https://developers.openai.com/codex/config-basic/)
+from `~/.codex/config.toml` and [global instructions](https://developers.openai.com/codex/guides/agents-md/)
+from `~/.codex/AGENTS.md`. The canonical config selects the `inspired-github`
+light syntax theme. Start a new Codex session after you change the config or the
+global instructions.
+
 ## Prime Agent
 
 Prime Agent uses the same global instructions as Pi. Prime Agent cannot load its
@@ -154,12 +177,15 @@ settings from a second file. Copy the canonical files to its runtime directory:
 install -m 644 .pi/agent/AGENTS.md ~/.prime/agent/AGENTS.md
 install -m 600 .prime/agent/settings.json ~/.prime/agent/settings.json
 install -m 600 .prime/agent/models.json ~/.prime/agent/models.json
+mkdir -p ~/.prime/agent/themes
+install -m 644 .prime/agent/themes/*.json ~/.prime/agent/themes/
 ```
 
 The canonical settings contain portable preferences. `onboardingShown` prevents
-a new onboarding prompt after installation. The settings load the committed Exa
-MCP skill and use `EXA_API_KEY` from the environment. They disable the bundled
-Serper skill. The custom model file adds Featherless AI and uses
+a new onboarding prompt after installation. The settings select the custom
+GitHub Light Default theme. The settings load the committed Exa MCP skill and
+use `EXA_API_KEY` from the environment. They disable the bundled Serper skill.
+The custom model file adds Featherless AI and uses
 `FEATHERLESS_API_KEY` from the environment. The model file uses the Featherless
 32K hosted context limit. The settings reserve 20K tokens and keep 2K recent
 tokens so Prime Agent can compact a long session before a request fails. The

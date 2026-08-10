@@ -1,17 +1,20 @@
 # Ported from .config/ghostty/config.ghostty.
 # Rio reloads configuration changes automatically.
 
-# Crisp 2x-scale layout for the 4K desktop. Keep text and TUI surfaces opaque;
+# Crisp high-density layout for the 4K desktop. Keep text and TUI surfaces opaque;
 # translucency and post-processing filters reduce terminal contrast.
 line-height = 1.08
 margin = [6, 8]
 hide-mouse-cursor-when-typing = true
 enable-scroll-bar = false
-force-theme = "dark"
+
+[adaptive-theme]
+light = "github-light-default"
+dark = "synthwave-84"
 
 [fonts]
 family = "MonoLisaCode"
-size = 14
+size = 16
 hinting = true
 features = [
   "ss01",
@@ -78,36 +81,3 @@ current-working-directory = true
 [cursor]
 shape = "beam"
 blinking = false
-
-# SynthWave '84
-[colors]
-background = "#262335"
-foreground = "#ffffff"
-cursor = "#03edf9"
-vi-cursor = "#ff7edb"
-selection-background = "#ffffff20"
-selection-foreground = "#ffffff"
-
-# Keep Rio's chrome and Herdr's pane separators in the same violet range.
-tabs = "#848bbd"
-tabs-active = "#ffffff"
-bar = "#241b2f"
-split = "#495495"
-
-black = "#241b2f"
-red = "#fe4450"
-green = "#72f1b8"
-yellow = "#f3e70f"
-blue = "#03edf9"
-magenta = "#ff7edb"
-cyan = "#03edf9"
-white = "#ffffff"
-
-light-black = "#848bbd"
-light-red = "#fe4450"
-light-green = "#72f1b8"
-light-yellow = "#fede5d"
-light-blue = "#03edf9"
-light-magenta = "#ff7edb"
-light-cyan = "#03edf9"
-light-white = "#ffffff"
