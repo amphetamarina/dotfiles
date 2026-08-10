@@ -17,7 +17,6 @@ Local path: `~/Workspace/dotfiles`.
 
 | App | Loader | Config in repo |
 | --- | --- | --- |
-| Ghostty | `~/.config/ghostty/config.ghostty` | `.config/ghostty/config.ghostty` |
 | GNOME input | `~/.config/autostart/dotfiles-input-settings.desktop` | `.config/gnome/apply-input-settings.sh` |
 | Herdr | `HERDR_CONFIG_PATH` in Nushell | `.config/herdr/config.toml` |
 | Nushell | `~/.config/nushell/config.nu` | `.config/nushell/config.nu` |
@@ -32,7 +31,6 @@ own canonical settings and custom model files.
 Loaders contain only these directives:
 
 ```text
-Ghostty: config-file = "/home/amphetamarina/Workspace/dotfiles/.config/ghostty/config.ghostty"
 GNOME input: run ~/Workspace/dotfiles/.config/gnome/apply-input-settings.sh
 Herdr: $env.HERDR_CONFIG_PATH = "/home/amphetamarina/Workspace/dotfiles/.config/herdr/config.toml"
 Nushell: source ~/Workspace/dotfiles/.config/nushell/config.nu
@@ -52,7 +50,6 @@ app cannot include another file. Update `README.md`.
 ## Checks
 
 ```bash
-ghostty +validate-config
 nu --config ~/.config/nushell/config.nu -c 'print "Nushell config OK"'
 python -m json.tool .prime/agent/settings.json >/dev/null
 python -m json.tool .prime/agent/models.json >/dev/null

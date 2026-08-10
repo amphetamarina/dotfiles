@@ -8,7 +8,6 @@ be committed.
 
 ## Managed configuration
 
-- Ghostty: `.config/ghostty/config.ghostty`
 - GNOME input settings: `.config/gnome/apply-input-settings.sh`
 - GNOME screencast conversion: `.config/screencast/screencast-convert.sh` and `.config/systemd/user/screencast-convert.*`
 - Herdr: `.config/herdr/config.toml`
@@ -65,8 +64,8 @@ mkdir -p ~/.config/rio
 install -m 644 .config/rio/config.toml ~/.config/rio/config.toml
 ```
 
-The configuration ports the Ghostty setup to MonoLisa Code at 13 pt with the
-`ss01`, `dlig`, and `calt` OpenType features and Kanagawa colors. It is
+The configuration uses MonoLisa Code at 13 pt with the `ss01`, `dlig`, and
+`calt` OpenType features and Kanagawa colors. It is
 tuned for the 4K display at 2x scale with font hinting, native Vulkan rendering,
 Nerd Font symbol mapping, drawable box characters, and opaque sRGB output.
 
@@ -96,15 +95,6 @@ $env.EXAMPLE_API_KEY = "replace-with-a-machine-local-secret"
 
 Keep the file private with mode `600`. Keep generated and other machine-local
 Nushell files in the runtime directory.
-
-## Ghostty
-
-Keep the runtime configuration small. Load the canonical configuration from
-this repository:
-
-```ini
-config-file = "/home/amphetamarina/Workspace/dotfiles/.config/ghostty/config.ghostty"
-```
 
 ## Screencast conversion
 
