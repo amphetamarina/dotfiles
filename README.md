@@ -14,7 +14,6 @@ be committed.
 - Herdr: `.config/herdr/config.toml`
 - Nushell: `.config/nushell/config.nu`
 - Rio: `.config/rio/config.toml`
-- Workspace QGIS container: `workspace-setup/qgis-container.sh`
 - Pi global instructions, settings, extensions, and skills: `.pi/agent/`
 - Codex settings and shared global instructions: `.codex/config.toml` and
   `.pi/agent/AGENTS.md`
@@ -57,33 +56,6 @@ Generate the mise module used by Nushell:
 mkdir -p ~/.config/nushell
 mise activate nu > ~/.config/nushell/mise.nu
 ```
-
-### QGIS 4.2.1
-
-Ubuntu 24.04 provides an older QGIS release. The QGIS repositories support only
-the 3.44 long-term release on Ubuntu 24.04 because its dependencies are not
-QGIS 4 ready. The Workspace tasks instead use the official QGIS 4.2.1 container
-image with rootless Podman.
-
-Install and verify the local image:
-
-```bash
-cd ~/Workspace
-mise run qgis-install
-mise run qgis-version
-```
-
-Start QGIS from the desktop session:
-
-```bash
-cd ~/Workspace
-mise run qgis
-```
-
-The tasks keep the container storage and the QGIS profile in
-`~/Workspace/.local/qgis`. The container can read and write Workspace files at
-`/workspace`. See the [QGIS installation guide](https://qgis.org/resources/installation-guide/)
-and the [official QGIS container documentation](https://github.com/qgis/QGIS/blob/final-4_2_1/.docker/README.md).
 
 ### Rio terminal
 

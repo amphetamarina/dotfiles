@@ -4,15 +4,3 @@ herdr = "latest"
 node = "26.7.0"
 python = "3.14.7"
 rust = "1.97.1"
-
-[tasks.qgis-install]
-description = "Install QGIS 4.2.1 in the Workspace"
-run = "./dotfiles/workspace-setup/qgis-container.sh install"
-
-[tasks.qgis]
-description = "Run the Workspace QGIS installation"
-run = "./dotfiles/workspace-setup/qgis-container.sh run"
-
-[tasks.qgis-version]
-description = "Show the Workspace QGIS version"
-run = "./dotfiles/workspace-setup/qgis-container.sh version"
