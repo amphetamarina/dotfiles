@@ -131,8 +131,9 @@ cd ~/Workspace
 mise exec -- nu
 ```
 
-The canonical configuration sets the user `PATH` and the Herdr configuration
-path. It also loads the optional, gitignored `secrets` file. Use Nushell syntax
+The canonical configuration sets `PNPM_HOME`, puts pnpm and user executables on
+`PATH`, and sets the Herdr configuration path. It also loads the optional,
+gitignored `secrets` file. Use Nushell syntax
 in that file:
 
 ```nu

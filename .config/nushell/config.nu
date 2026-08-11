@@ -1,10 +1,12 @@
 # Load the mise module from the Nushell runtime directory.
 use ($nu.default-config-dir | path join mise.nu)
 
-# Put user executables before system executables.
+# Put pnpm and user executables before system executables.
+$env.PNPM_HOME = ($env.HOME | path join ".local" "share" "pnpm")
+let pnpm_bin = ($env.PNPM_HOME | path join "bin")
 let local_bin = ($env.HOME | path join ".local" "bin")
 let user_bin = ($env.HOME | path join "bin")
-$env.PATH = ([$local_bin $user_bin ...$env.PATH] | uniq)
+$env.PATH = ([$pnpm_bin $local_bin $user_bin ...$env.PATH] | uniq)
 
 # Use the Herdr configuration from this repository.
 $env.HERDR_CONFIG_PATH = ($env.HOME | path join "Workspace" "dotfiles" ".config" "herdr" "config.toml")
