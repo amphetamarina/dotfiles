@@ -1,0 +1,4 @@
+# Load the canonical settings from this public configuration repository.
+- id: settings
+  config:
+    path: /home/amphetamarina/Workspace/dotfiles/.config/deepseek-harness/settings.yaml

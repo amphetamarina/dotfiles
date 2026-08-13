@@ -13,6 +13,7 @@ be committed.
 - GNOME screencast conversion: `.config/screencast/screencast-convert.sh` and `.config/systemd/user/screencast-convert.*`
 - Herdr: `.config/herdr/config.toml`
 - Nushell: `.config/nushell/config.nu`
+- DeepSeek Harness: `.config/deepseek-harness/`
 - Rio: `.config/rio/config.toml`
 - Pi global instructions, settings, extensions, and skills: `.pi/agent/`
 - Codex settings and shared global instructions: `.codex/config.toml` and
@@ -114,6 +115,30 @@ $env.EXAMPLE_API_KEY = "replace-with-a-machine-local-secret"
 
 Keep the file private with mode `600`. Keep generated and other machine-local
 Nushell files in the runtime directory.
+
+## DeepSeek Harness
+
+Install `make` for the native terminal dependency. Then install the selected
+DeepSeek Harness release with npm:
+
+```bash
+sudo apt-get install make
+npm install --global @deepseek-ai/dsh@0.1.0-rc.6
+```
+
+Copy the small loader patch to the Harness home directory:
+
+```bash
+mkdir -p ~/.dsh
+install -m 600 .config/deepseek-harness/cordis.patch.yml ~/.dsh/cordis.patch.yml
+```
+
+The loader patch directs Harness to the canonical `settings.yaml` file in this
+repository. The settings add the OpenCode Go provider. They select DeepSeek V4
+Flash as the default model. They also make DeepSeek V4 Pro available.
+
+Set `OPENCODE_API_KEY` in the machine-local `secrets` file. Start a new Nushell
+session after you change the key. Run `dsh web` to start Harness.
 
 ## Screencast conversion
 

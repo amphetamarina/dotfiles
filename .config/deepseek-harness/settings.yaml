@@ -1,0 +1,19 @@
+# Keep OPENCODE_API_KEY in the machine-local environment.
+agent-default-model:
+  provider: opencode-go
+  model: deepseek-v4-flash
+
+llm-pi-ai:
+  providers:
+    opencode-go:
+      displayName: OpenCode Go
+      apiKeyEnv: OPENCODE_API_KEY
+      api: openai-completions
+      baseURL: https://opencode.ai/zen/go/v1
+      models:
+        - id: deepseek-v4-flash
+          name: DeepSeek V4 Flash
+          contextWindow: 1000000
+        - id: deepseek-v4-pro
+          name: DeepSeek V4 Pro
+          contextWindow: 1000000

@@ -20,6 +20,7 @@ Local path: `~/Workspace/dotfiles`.
 | GNOME input | `~/.config/autostart/dotfiles-input-settings.desktop` | `.config/gnome/apply-input-settings.sh` |
 | Herdr | `HERDR_CONFIG_PATH` in Nushell | `.config/herdr/config.toml` |
 | Nushell | `~/.config/nushell/config.nu` | `.config/nushell/config.nu` |
+| DeepSeek Harness | `~/.dsh/cordis.patch.yml` | `.config/deepseek-harness/` |
 | Workspace tools | `~/Workspace/mise.toml` | `workspace-setup/mise.toml` |
 | Pi | `~/.pi/agent/` loaders | `.pi/agent/` |
 | Codex | `~/.codex/` runtime files | `.codex/config.toml` and `.pi/agent/AGENTS.md` |
@@ -35,6 +36,7 @@ Loaders contain only these directives:
 GNOME input: run ~/Workspace/dotfiles/.config/gnome/apply-input-settings.sh
 Herdr: $env.HERDR_CONFIG_PATH = "/home/amphetamarina/Workspace/dotfiles/.config/herdr/config.toml"
 Nushell: source ~/Workspace/dotfiles/.config/nushell/config.nu
+DeepSeek Harness: copy .config/deepseek-harness/cordis.patch.yml to ~/.dsh/cordis.patch.yml
 Workspace tools: copy ~/Workspace/dotfiles/workspace-setup/mise.toml to ~/Workspace/mise.toml
 Codex instructions: copy .pi/agent/AGENTS.md to ~/.codex/AGENTS.md
 Codex settings: copy .codex/config.toml to ~/.codex/config.toml
