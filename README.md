@@ -134,8 +134,9 @@ install -m 600 .config/deepseek-harness/cordis.patch.yml ~/.dsh/cordis.patch.yml
 ```
 
 The loader patch directs Harness to the canonical `settings.yaml` file in this
-repository. The settings add the OpenCode Go provider. They select DeepSeek V4
-Flash as the default model. They also make DeepSeek V4 Pro available.
+repository. The settings add the OpenCode Go provider with every model its API
+advertises (`GET https://opencode.ai/zen/go/v1/models`). They select DeepSeek
+V4 Flash as the default model.
 
 Set `OPENCODE_API_KEY` in the machine-local `secrets` file. Start a new Nushell
 session after you change the key. Run `dsh web` to start Harness.
