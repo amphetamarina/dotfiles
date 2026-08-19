@@ -1,0 +1,2 @@
+FROM openbmb/minicpm5:latest
+PARAMETER num_ctx 32768

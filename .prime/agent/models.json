@@ -36,6 +36,38 @@
           "maxTokens": 16384
         }
       ]
+    },
+    "ollama": {
+      "name": "Ollama (Local)",
+      "baseUrl": "http://127.0.0.1:11434/v1",
+      "apiKey": "ollama",
+      "api": "openai-completions",
+      "compat": {
+        "supportsDeveloperRole": false,
+        "supportsReasoningEffort": true,
+        "maxTokensField": "max_tokens"
+      },
+      "models": [
+        {
+          "id": "openbmb/minicpm5:prime-agent",
+          "name": "MiniCPM5 (Ollama Local, 32K)",
+          "reasoning": true,
+          "thinkingLevelMap": {
+            "off": "none",
+            "minimal": null,
+            "low": "low",
+            "medium": "medium",
+            "high": "high",
+            "xhigh": null,
+            "max": "max"
+          },
+          "input": [
+            "text"
+          ],
+          "contextWindow": 32768,
+          "maxTokens": 4096
+        }
+      ]
     }
   }
 }

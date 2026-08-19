@@ -220,6 +220,33 @@ mkdir -p ~/.prime/agent/themes
 install -m 644 .prime/agent/themes/*.json ~/.prime/agent/themes/
 ```
 
+Create the local MiniCPM5 variant before you select it in Prime Agent:
+
+```bash
+ollama pull openbmb/minicpm5:latest
+ollama create openbmb/minicpm5:prime-agent \
+  -f .config/ollama/Modelfile.minicpm5-prime-agent
+prime-agent model list ollama
+prime-agent --provider ollama --model openbmb/minicpm5:prime-agent
+```
+
+The variant sets a 32K context window. The normal Prime Agent prompt is larger
+than the 4K default context. The custom provider uses the local Ollama OpenAI
+endpoint. It does not make Ollama the default provider.
+
+Use the exact selector for an RLM child:
+
+```python
+models = await rlm.find_models("ollama/openbmb/minicpm5:prime-agent")
+child = await rlm(
+    "Do the focused task",
+    model="ollama/openbmb/minicpm5:prime-agent",
+)
+```
+
+Start a new Prime Agent session after you change `models.json`. An RLM worker
+uses the model registry that its parent loaded at startup.
+
 The canonical settings contain portable preferences. `onboardingShown` prevents
 a new onboarding prompt after installation. The settings select the custom
 GitHub Light Default theme. The settings load the committed Exa MCP skill and
