@@ -1,16 +1,26 @@
 # Global Agent Instructions
 
-## Language
+## Writing style
 
-- Use ASD-STE100 Simplified Technical English in instructions, explanations,
-  reports, and commit messages.
-- Use short sentences.
-- Use active voice.
-- Put one main instruction in each sentence.
-- Use the same term for the same item.
-- Explain necessary technical terms.
-- Use the official ASD-STE100 site as the language reference:
-  https://www.asd-ste100.org/
+- Use the Google developer documentation style guide as the default reference
+  for all prose: https://developers.google.com/style
+- Apply direct user instructions and project-specific style before this guide.
+- For every writing task, apply the relevant guide rules during the draft and
+  the final edit.
+- Open the applicable current guide page when a rule is unclear or can have
+  changed.
+- Write for the intended audience. Use clear, concise, and direct language.
+- Use active voice, present tense, and second person when they fit the content.
+- Put one main idea in each sentence. Keep sentences and paragraphs short.
+- Use sentence case for headings. Use the same term for the same item.
+- Define unfamiliar abbreviations and necessary jargon. Avoid idioms, slang,
+  unnecessary words, and excessive claims.
+- Use inclusive, accessible, and global-ready language. Use descriptive link
+  text.
+- Preserve exact code, commands, identifiers, UI labels, quotations, and legal
+  text.
+- Depart from the guide only when accuracy, safety, accessibility, direct user
+  instructions, or project style requires it. Stay consistent.
 
 ## Agent configuration source
 
