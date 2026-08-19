@@ -13,14 +13,11 @@ be committed.
 - GNOME screencast conversion: `.config/screencast/screencast-convert.sh` and `.config/systemd/user/screencast-convert.*`
 - Herdr: `.config/herdr/config.toml`
 - Nushell: `.config/nushell/config.nu`
-- DeepSeek Harness: `.config/deepseek-harness/`
 - Rio: `.config/rio/config.toml`
-- Pi global instructions, settings, extensions, and skills: `.pi/agent/`
 - Codex settings and shared global instructions: `.codex/config.toml` and
-  `.pi/agent/AGENTS.md`
-- Prime Agent global instructions, settings, theme, and Exa skill:
-  `.pi/agent/AGENTS.md`, `.prime/agent/settings.json`, and
-  `.prime/agent/themes/`, `.prime/agent/skills/exa/`
+  `.prime/agent/AGENTS.md`
+- Prime Agent global instructions, settings, custom models, theme, extensions,
+  and Exa skill: `.prime/agent/`
 
 ## APT
 
@@ -116,31 +113,6 @@ $env.EXAMPLE_API_KEY = "replace-with-a-machine-local-secret"
 Keep the file private with mode `600`. Keep generated and other machine-local
 Nushell files in the runtime directory.
 
-## DeepSeek Harness
-
-Install `make` for the native terminal dependency. Then install the selected
-DeepSeek Harness release with npm:
-
-```bash
-sudo apt-get install make
-npm install --global @deepseek-ai/dsh@0.1.0-rc.6
-```
-
-Copy the small loader patch to the Harness home directory:
-
-```bash
-mkdir -p ~/.dsh
-install -m 600 .config/deepseek-harness/cordis.patch.yml ~/.dsh/cordis.patch.yml
-```
-
-The loader patch directs Harness to the canonical `settings.yaml` file in this
-repository. The settings add the OpenCode Go provider with every model its API
-advertises (`GET https://opencode.ai/zen/go/v1/models`). They select DeepSeek
-V4 Flash as the default model.
-
-Set `OPENCODE_API_KEY` in the machine-local `secrets` file. Start a new Nushell
-session after you change the key. Run `dsh web` to start Harness.
-
 ## Screencast conversion
 
 GNOME records screencasts as WebM. Twitter and X reject WebM uploads. A user
@@ -170,35 +142,15 @@ Convert all existing recordings at any time:
 systemctl --user start screencast-convert.service
 ```
 
-## Pi packages
-
-`.pi/agent/settings.json` declares Pi packages by registry name. Pi installs the
-package code in its runtime directory. The package code does not belong in this
-repository.
-
-`.pi/agent/pi-codex-conversion.json` stores the portable settings for
-`@howaboua/pi-codex-conversion`.
-
-Pi cannot include a second global settings file. Copy these canonical files to
-the runtime directory after a fresh checkout:
-
-```bash
-install -m 600 .pi/agent/settings.json ~/.pi/agent/settings.json
-install -m 600 .pi/agent/pi-codex-conversion.json ~/.pi/agent/pi-codex-conversion.json
-```
-
-Do not commit Pi credentials, sessions, package files, or machine-specific
-audio device IDs.
-
 ## Codex
 
-Codex uses the portable settings in this repository. It also uses the same
-global instructions as Pi and Prime Agent:
+Codex uses the portable settings in this repository. It shares the global
+instructions stored with the Prime Agent configuration:
 
 ```bash
 mkdir -p ~/.codex
 install -m 600 .codex/config.toml ~/.codex/config.toml
-install -m 644 .pi/agent/AGENTS.md ~/.codex/AGENTS.md
+install -m 644 .prime/agent/AGENTS.md ~/.codex/AGENTS.md
 ```
 
 The Codex CLI reads [user settings](https://developers.openai.com/codex/config-basic/)
@@ -209,11 +161,11 @@ global instructions.
 
 ## Prime Agent
 
-Prime Agent uses the same global instructions as Pi. Prime Agent cannot load its
-settings from a second file. Copy the canonical files to its runtime directory:
+Prime Agent cannot load its settings from a second file. Copy the canonical
+files to its runtime directory:
 
 ```bash
-install -m 644 .pi/agent/AGENTS.md ~/.prime/agent/AGENTS.md
+install -m 644 .prime/agent/AGENTS.md ~/.prime/agent/AGENTS.md
 install -m 600 .prime/agent/settings.json ~/.prime/agent/settings.json
 install -m 600 .prime/agent/models.json ~/.prime/agent/models.json
 mkdir -p ~/.prime/agent/themes
